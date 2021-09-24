@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_cors import CORS
-from pfrf.pfrf_bootstrap import Bootstrap
+from pf_flask.pfrf_bootstrap import Bootstrap
 
 
 app = Flask(__name__)
