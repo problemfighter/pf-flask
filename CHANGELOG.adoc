@@ -3,3 +3,4 @@
 == 1.0.1
 
 * Added Source Development Script & Documentation. link:https://github.com/problemfighter/pf-flask/pull/1[#1, window=_blank]
+* Added Create Module & CRUD Sample Code. link:https://github.com/problemfighter/pf-flask/pull/2[#2, window=_blank]
