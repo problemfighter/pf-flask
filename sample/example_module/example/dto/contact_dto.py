@@ -15,7 +15,6 @@ class ContactDetailsDto(PfDetailBaseSchema):
     password = fields.String()
 
 
-
 class ContactCreateDto(ContactDetailsDto):
     class Meta:
         model = Contact
