@@ -1,4 +1,7 @@
+import os.path
 import sys
+from functools import reduce
+from os.path import exists
 
 from werkzeug.utils import ImportStringError
 
@@ -33,3 +36,14 @@ def is_url_register(flask_app, url):
         if url_rule.rule == url:
             return True
     return False
+
+
+def concat_path(first, last, *more_path):
+    path = os.path.join(first, last)
+    if len(more_path) > 0:
+        path = os.path.join(path, reduce(os.path.join, more_path))
+    return path
+
+
+def is_exists_path(path):
+    return exists(path)

@@ -4,6 +4,7 @@ import subprocess
 application_dir = "application"
 pf_libraries_dir = "pf-libraries"
 
+
 def get_git():
     git = "git"
     exported_git_path = os.environ.get('git_path')

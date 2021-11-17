@@ -1,22 +1,12 @@
-# PF Libraries
-flask-pf-common==1.0
-flask-pf-marshmallow-swagger==1.7
-flask-pf-sqlalchemy==1.0
-pf-py-object-man==1.1
-pf-python-io==1.0
-
-
 # Flask Libraries
 Flask==2.0.1
 Werkzeug==2.0.1
 
 # Others Libraries
 Flask-Cors==3.0.9
+python-dotenv==0.19.2
 
 
 # Database Libraries
 SQLAlchemy==1.4.20
 PyMySQL==1.0.2
-
-
-

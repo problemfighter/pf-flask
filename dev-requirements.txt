@@ -4,6 +4,7 @@ Werkzeug==2.0.1
 
 # Others Libraries
 Flask-Cors==3.0.9
+python-dotenv==0.19.2
 
 
 # Database Libraries

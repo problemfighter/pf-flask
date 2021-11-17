@@ -45,3 +45,4 @@ node_modules
 *-lock.json
 flask-rest.sqlite3
 xyz/*
+*.sqlite3

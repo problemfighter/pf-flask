@@ -1,0 +1,28 @@
+= Useful Commands on Development
+
+* Create Virtual Environment
+```bash
+python -m venv venv
+source venv/Scripts/activate
+```
+
+* Export Dependencies
+```bash
+pip freeze > requirements.txt
+```
+
+* Install Dependencies
+```bash
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+* Install Module
+```bash
+python setup.py develop
+```
+
+* Prepare Development
+```bash
+bash tools/prepare-dev.sh
+```

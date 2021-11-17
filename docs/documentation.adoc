@@ -1,0 +1,6 @@
+= Documentation
+* How to specify configuration file
+** The default configurars are stored in pff_app_config.py
+** .env file will load default, if the file available it will overwrite the default configuration file values
+** if the environment is prod, then the file name should be .env-prod
+** List type data should be ALLOW_CORS_ORIGINS = "localhost, test.com, 127.0.0.1"
