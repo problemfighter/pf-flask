@@ -46,3 +46,4 @@ node_modules
 flask-rest.sqlite3
 xyz/*
 *.sqlite3
+pf-flask.egg-info
