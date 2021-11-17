@@ -28,6 +28,17 @@ class PFFConfigManager:
             return ".env-" + env
         return ".env"
 
+    def convert_config_to_map(self, config: PFFAppConfig):
+        config_map = {}
+        for key in dir(config):
+            if key.isupper():
+                config_map[key] = getattr(config, key)
+        return config_map
+
+    def merge_config_by_config(self, source: PFFAppConfig, destination: PFFAppConfig):
+        config_map = self.convert_config_to_map(source)
+        return self._convert_and_merge(config_map, destination)
+
     def _convert_and_merge(self, env_config, config: PFFAppConfig):
         config_map = dir(config)
         for key in config_map:

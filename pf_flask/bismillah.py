@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_cors import CORS
 
+from pf_flask.global_registry import init_global_config
 from pf_flask.pff_app_config import PFFAppConfig
 from pf_flask.pff_bootstrap import PFFBootstrap
 from pf_flask.pff_config_manager import PFFConfigManager
@@ -15,6 +16,7 @@ class Bismillah(object):
     def __init__(self, name, config=PFFAppConfig()):
         self._flask_app = Flask(name)
         self._config = self._config_manager.merge_config(config)
+        init_global_config(self._config)
         self._register_app_config()
         self._bootstrap.initialize_app(self._flask_app, self._config)
         self._init_cors()
