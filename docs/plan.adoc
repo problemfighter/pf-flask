@@ -1,0 +1,12 @@
+
+== Features
+* Portable
+* Configuration
+** local
+** dev
+** staging
+** production
+** custom
+** Access System Environment Variable
+** Configuration read from .env file
+* Should have a feature for change the configuration

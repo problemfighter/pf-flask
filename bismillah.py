@@ -12,7 +12,7 @@ CORS(app, resources={
     r"/static/*": {"origins": "*", "Access-Control-Allow-Origin": "*"}
 })
 
-
 if __name__ == '__main__':
-    port = 1200;  host = "127.0.0.1"
+    port = 1200
+    host = "127.0.0.1"
     app.run(host=host, port=port)
