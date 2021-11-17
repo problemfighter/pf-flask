@@ -15,7 +15,7 @@ class PFFAppConfig(object):
     ALLOW_ACCESS_CONTROL_ORIGIN: str = "*"
     PORT: int = 1200
     HOST: str = "127.0.0.1"
-    MODULE_REGISTRY_PACKAGE: str = "application.registry.Register"
+    MODULE_REGISTRY_PACKAGE: list = ["application.registry.Register"]
 
     def set_base_dir(self, path):
         if not self.BASE_DIR:

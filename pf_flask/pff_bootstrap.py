@@ -36,8 +36,8 @@ class PFFBootstrap:
         if not is_slash_registered:
             flask_app.add_url_rule(self._config.DEFAULT_URL, view_func=self._default_home)
 
-    def _get_modules(self) -> Optional[PFFRegisterModule]:
-        app_config = import_from_string(self._config.MODULE_REGISTRY_PACKAGE, True)
+    def _get_modules(self, module_registry_package) -> Optional[PFFRegisterModule]:
+        app_config = import_from_string(module_registry_package, True)
         if app_config:
             if not issubclass(app_config, PFFRegisterModule):
                 raise PfMsException("Register Should be Implementation of PFFRegisterModule")
@@ -45,8 +45,11 @@ class PFFBootstrap:
         return None
 
     def _register_modules(self):
-        modules = self._get_modules()
-        if modules:
-            with self._flask_app.app_context():
-                modules.register_model_controller(self._flask_app)
-            modules.run_on_start(self._flask_app)
+        module_registry_packages = self._config.MODULE_REGISTRY_PACKAGE
+        if module_registry_packages and isinstance(module_registry_packages, list):
+            for module_registry_package in module_registry_packages:
+                modules = self._get_modules(module_registry_package)
+                if modules:
+                    with self._flask_app.app_context():
+                        modules.register_model_controller(self._flask_app)
+                    modules.run_on_start(self._flask_app)
