@@ -2,7 +2,6 @@ import os.path
 import sys
 from functools import reduce
 from os.path import exists
-
 from werkzeug.utils import ImportStringError
 
 
