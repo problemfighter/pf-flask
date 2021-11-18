@@ -24,6 +24,9 @@ class Bismillah(object):
     def run(self):
         self._flask_app.run(host=self._config.HOST, port=self._config.PORT)
 
+    def add_before_request_fun(self, function):
+        self._flask_app.before_request_funcs.setdefault(None, []).append(function)
+
     def get_flask_app(self):
         return self._flask_app
 
