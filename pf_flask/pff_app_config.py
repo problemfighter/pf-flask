@@ -11,7 +11,7 @@ class PFFAppConfig(object):
     SWAGGER_ENABLE: bool = True
     DEFAULT_URL: str = '/'
     DEFAULT_HTML: str = 'bismillah.html'
-    ALLOW_CORS_ORIGINS: list = ['localhost', '127.0.0.1']
+    ALLOW_CORS_ORIGINS: list = ["*"]
     ALLOW_ACCESS_CONTROL_ORIGIN: str = "*"
     PORT: int = 1200
     HOST: str = "127.0.0.1"
