@@ -1,6 +1,5 @@
 from flask import Flask
 from flask_cors import CORS
-
 from pf_flask.global_registry import init_global_config
 from pf_flask.pff_app_config import PFFAppConfig
 from pf_flask.pff_bootstrap import PFFBootstrap

@@ -1,7 +1,5 @@
 from typing import Optional
-
 from flask import render_template
-
 from pf_flask.pff_app_config import PFFAppConfig
 from pf_flask.pff_interfaces import PFFRegisterModule
 from pf_flask.pff_utils import is_url_register, import_from_string
