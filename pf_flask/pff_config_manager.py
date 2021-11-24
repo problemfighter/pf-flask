@@ -45,7 +45,7 @@ class PFFConfigManager:
             if key.isupper():
                 if key in env_config:
                     try:
-                        var_type = get_type_hints(PFFAppConfig)[key]
+                        var_type = get_type_hints(type(config))[key]
                         override_data = env_config.get(key)
                         if var_type == bool:
                             env_config_value = self._parse_bool(override_data)
