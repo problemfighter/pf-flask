@@ -35,7 +35,7 @@ class PFFBootstrap:
             flask_app.add_url_rule(self._config.DEFAULT_URL, view_func=self._default_home)
 
     def _get_modules(self, module_registry_package) -> Optional[PFFRegisterModule]:
-        app_config = import_from_string(module_registry_package, True)
+        app_config = import_from_string(module_registry_package, self._config.STRING_IMPORT_SILENT)
         if app_config:
             if not issubclass(app_config, PFFRegisterModule):
                 raise PfMsException("Register Should be Implementation of PFFRegisterModule")

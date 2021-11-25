@@ -53,7 +53,7 @@ class PFFConfigManager:
                             env_config_value = self._parse_list(override_data)
                         else:
                             env_config_value = var_type(override_data)
-                        if env_config_value:
+                        if env_config_value or (var_type == bool and not env_config_value):
                             setattr(config, key, env_config_value)
                     except:
                         pass

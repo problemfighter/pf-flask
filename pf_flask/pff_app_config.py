@@ -5,6 +5,7 @@ class PFFAppConfig(object):
     BASE_DIR: str = None
     APP_CONFIG_PATH: str = None
     DEBUG: bool = True
+    STRING_IMPORT_SILENT: bool = True
     SECRET_KEY: str = 'random_secret_key_base'
     SQLALCHEMY_TRACK_MODIFICATIONS: bool = False
     SQLALCHEMY_DATABASE_URI: str = None
