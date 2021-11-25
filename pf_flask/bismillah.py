@@ -1,4 +1,5 @@
 from flask import Flask
+import typing as t
 from flask_cors import CORS
 from pf_flask.global_registry import init_global_config
 from pf_flask.pff_app_config import PFFAppConfig
@@ -38,5 +39,5 @@ class Bismillah(object):
             r"/static/*": {"origins": self._config.ALLOW_CORS_ORIGINS, "Access-Control-Allow-Origin": self._config.ALLOW_ACCESS_CONTROL_ORIGIN}
         })
 
-    def __call__(self):
-        return self.run()
+    def __call__(self, environ: dict, start_response: t.Callable) -> t.Any:
+        return self._flask_app.wsgi_app(environ, start_response)
