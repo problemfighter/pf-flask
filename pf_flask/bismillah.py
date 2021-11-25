@@ -38,3 +38,5 @@ class Bismillah(object):
             r"/static/*": {"origins": self._config.ALLOW_CORS_ORIGINS, "Access-Control-Allow-Origin": self._config.ALLOW_ACCESS_CONTROL_ORIGIN}
         })
 
+    def __call__(self):
+        return self.run()
