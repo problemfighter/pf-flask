@@ -50,7 +50,10 @@ class PFFConfigManager:
                         if var_type == bool:
                             env_config_value = self._parse_bool(override_data)
                         elif var_type == list:
-                            env_config_value = self._parse_list(override_data)
+                            if isinstance(override_data, list):
+                                env_config_value = override_data
+                            else:
+                                env_config_value = self._parse_list(override_data)
                         else:
                             env_config_value = var_type(override_data)
                         if env_config_value or (var_type == bool and not env_config_value):
